@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("fonts/SourceSansPro-Bold.ttf") format("truetype");
+}
+
+.source-sans {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body .row {
+  padding: 0;
+  margin: 0;
+}
+
+body .top {
+  background: url("../images/back.jpeg") no-repeat;
+  background-size: cover;
+  height: 700px;
+}
+
+body .top nav .container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+body .top nav .container .navbar .collapse .navbar-nav .nav-item .nav-link {
+  font-weight: bold;
+  font-family: "Source Sans Pro";
+  color: #000;
+  text-transform: uppercase;
+}
+
+body .top nav .container .navbar .collapse .navbar-nav .nav-item .nav-link:hover {
+  color: #9DA7BB;
+}
+
+body .top nav .container .navbar .collapse .navbar-nav .nav-item:not(:first-child) {
+  margin-left: 30px;
+}
+
+body .top header .container .row {
+  z-index: 0;
+  position: relative;
+}
+
+body .top header .container .row .col-5 h3 {
+  margin-top: 106px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+body .top header .container .row .col-5 h3 span {
+  color: #FDB917;
+}
+
+body .top header .container .row .col-5 h3 span .line {
+  width: 5px;
+  height: 43px;
+  background-color: #fff;
+}
+
+body .top header .container .row .col-5 p {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+body .top header .container .row .col-5 form .input-group {
+  position: relative;
+  width: 660px !important;
+}
+
+body .top header .container .row .col-5 form .input-group input {
+  border-radius: 2px;
+  height: 60px;
+  border: none;
+}
+
+body .top header .container .row .col-5 form .input-group span {
+  border: none;
+  border-radius: 0;
+  background: none;
+  position: absolute;
+  right: 12px;
+}
+
+body .top header .container .row .col-7 img {
+  margin-top: 30px;
+}
+
+body .cours .container .row .title {
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+body .cours .container .row .col-4 {
+  padding: 0;
+}
+
+body .cours .container .row .col-4 .card {
+  width: 350px;
+  margin-top: 20px;
+  -webkit-box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.3);
+  box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.3);
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+body .cours .container .row .col-6 {
+  padding: 0;
+}
+
+body .cours .container .row .col-6 .card:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+body .cours .container .row .col-6 .card {
+  width: 540px;
+  -webkit-box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.3);
+  box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.3);
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+body .categories .container {
+  margin-top: 70px !important;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.3);
+  box-shadow: 0px 0px 30px 5px rgba(34, 60, 80, 0.3);
+}
+
+body footer {
+  height: 100px;
+  background-color: darkslategray;
+}
+
+body footer .container .numbers {
+  padding-top: 40px;
+}
+
+body footer .container .numbers .images {
+  padding-top: 15px;
+}
+
+body footer .container .numbers .images img {
+  margin-right: 10px;
+}
+/*# sourceMappingURL=main.css.map */

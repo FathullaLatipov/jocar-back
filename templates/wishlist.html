@@ -1,0 +1,259 @@
+{% extends 'layouts/base.html' %}
+{% load tags %}
+{% load static %}
+{% block content %}
+<style>
+.nav-link{
+    font-weight: bold;
+    font-family: "Source Sans Pro";
+    color: #000;
+    text-transform: uppercase;
+}
+.card {
+    border: 1px solid rgb(125, 122, 222);
+}
+.card:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
+}
+.parallax {
+    background-image: url(/static/images/zxcv.jpeg);
+
+        /* Set a specific height */
+        min-height: 500px;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        }
+        p {
+            margin-bottom: 7px;
+        }
+
+        .btn:focus {
+            box-shadow: none;
+        }
+        .btn-12{
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  border:none;
+  box-shadow: none;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+}
+.btn-12 span {
+  background: rgb(0,172,238);
+background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  display: block;
+  position: absolute;
+  width: 180px;
+  height: 40px;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  border-radius: 5px;
+  margin:0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.btn-12 span:nth-child(1) {
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12 span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+.btn-12:hover span:nth-child(1) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.btn-12:hover span:nth-child(2) {
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+ color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+
+.btn-14 {
+  background: #00fff7;
+  border: none;
+  z-index: 1;
+  width: 160px;
+  height: 40px;
+  color: #fff;
+}
+.btn-14:after {
+    margin-bottom: 15px;
+  position: absolute;
+  content: "";
+  width: 160px;
+  height: 0;
+  top: 15px;
+  right: 16px;
+  z-index: -1;
+
+  background-color: #00bfff;
+  transition: all 0.3s ease;
+  background-image: linear-gradient(315deg, #00bfff 0%, #f6fc9c 74%);
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5);
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+
+
+}
+.btn-14:hover {
+  color: #000;
+}
+.btn-14:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 40.5px;
+}
+.btn-14:active {
+  top: 2px;
+}
+
+
+/* QUESTION STYLES */
+.question {
+  padding: 0 0 10px;
+  font-size: 0;
+  position: relative;
+  display: block;
+}
+
+/* LABEL STYLES */
+label {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  width: 180px;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 20px;
+  color: #666;
+  line-height: 50px;
+}
+
+/* INPUT STYLES */
+input {
+  border: 2px solid #BBB;
+  padding: 0 20px;
+  color: #666;
+  display: inline-block;
+  width: calc(100% - 180px);
+  max-width: 100%;
+  height: 50px;
+  font-size: 17px;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+
+fieldset.question {
+  border: 0;
+  padding: 0 0 10px;
+  font-size: 0;
+  position: relative;
+  display: block;
+  max-width: 100%;
+}
+fieldset.question legend {
+  font-size: 17px;
+  margin-bottom: 10px;
+  width: 180px;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 20px;
+  color: #666;
+  line-height: 50px;
+  letter-spacing: -0.04em;
+  position: absolute;
+  top: 0;
+  left: -180px;
+}
+fieldset.question label {
+  display: inline-block;
+  width: calc(33.33% - (20px / 3));
+  height: 50px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 9px 5px;
+  line-height: 1.4;
+  background: rgb(156, 209, 255);
+  text-align: center;
+  font-size: 15px;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 5px;
+}
+fieldset.question label:nth-of-type(3n) {
+  margin-right: 0;
+}
+fieldset.question label.single-line {
+  padding: 0 5px;
+  line-height: 50px;
+}
+fieldset.question.error label {
+  background: #AE3535;
+}
+fieldset.question input:hover + label {
+  background: #00ffd0;
+  color: #fff;
+}
+fieldset.question input:focus + label,
+fieldset.question input:checked + label {
+  background: rgb(0, 189, 251);
+  color: #fff;
+}
+fieldset.question input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+</style>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi nulla quam tempore tenetur! A, dignissimos doloremque dolores doloribus earum esse inventore omnis rem vel! Ab ad aliquam atque, consequatur eos excepturi illum iure minus neque porro possimus repellat. A adipisci consequatur cumque dignissimos distinctio earum harum in iure laudantium magnam natus nobis nostrum, odio, omnis, porro praesentium quas quos repudiandae rerum similique? Ipsum labore magnam maxime, porro praesentium quam veritatis? Doloremque exercitationem incidunt laborum rerum tenetur. Beatae consectetur eos et id, ipsa laudantium qui soluta! Alias aliquid cum delectus ducimus, est, excepturi incidunt itaque mollitia odio, officia praesentium quas quisquam repudiandae temporibus voluptate voluptatibus voluptatum. Ducimus eaque error, et illo illum nesciunt officia provident qui vel voluptatum! Libero pariatur quas soluta veniam. Autem beatae consectetur debitis dicta eligendi et, eum facere facilis labore, modi necessitatibus nemo nihil nostrum officia perferendis quae quidem ratione repellat sint suscipit tempora ullam ut voluptate? Explicabo obcaecati officia quis saepe? Accusamus consectetur debitis, deleniti est eum ipsam numquam suscipit. Architecto blanditiis corporis cum cupiditate, delectus, dicta doloribus eaque eius eos error est explicabo facilis fugiat in ipsum itaque laudantium maiores minima modi molestias nesciunt pariatur perferendis praesentium quaerat quam quas quo repellat vel, veniam?</p>
+
+<div class="container">
+    <div class="row" style="margin-top: 50px;">
+        {% for product in object_list %}
+                 {% include 'layouts/product-block.html' %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

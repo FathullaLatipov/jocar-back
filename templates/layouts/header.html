@@ -1,0 +1,28 @@
+{% load static %}
+<nav class="bg-light">
+            <div class="container">
+                <div class="navbar navbar-expand-md ">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                          <li>
+                            <div class="nav-item">
+                              <h1>Jocar auto</h1>
+                            </div>
+                          </li>
+                          <li class="nav-item active mt-2">
+                            <a class="nav-link" href="/">Home</a>
+                          </li>
+                          <li class="nav-item mt-2">
+                            <a class="nav-link" href="/models/">Models</a>
+                          </li>
+                          <li class="nav-item mt-2">
+                            <a class="nav-link" href="#">Contact</a>
+                          </li>
+                        </ul>
+                    </div>
+                    <a href="{% url 'products:wishlist' %}">like</a>
+                    <button type="button" class="btn btn-secondary text-uppercase">Log In</button>
+                </div>
+            </div>
+        </nav>
+        <!-- header -->
