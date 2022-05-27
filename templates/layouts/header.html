@@ -1,4 +1,6 @@
 {% load static %}
+{% load tags %}
+{% load i18n %}
 <nav class="bg-light">
             <div class="container">
                 <div class="navbar navbar-expand-md ">
@@ -10,17 +12,32 @@
                             </div>
                           </li>
                           <li class="nav-item active mt-2">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/">{% trans 'Home' %}</a>
                           </li>
                           <li class="nav-item mt-2">
-                            <a class="nav-link" href="/models/">Models</a>
+                            <a class="nav-link" href="/models/">{% trans 'Models' %}</a>
                           </li>
                           <li class="nav-item mt-2">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="#contact">{% trans 'Contact' %}</a>
                           </li>
                         </ul>
                     </div>
-                    <a href="{% url 'products:wishlist' %}">like</a>
+                    <div class="dropdown show">
+                      <a class="btn btn-secondary dropdown-toggle" style="margin-left: -70%;"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          {% get_current_language as lang %}
+                             {% get_available_languages as langs %}
+                               {{ lang|upper }}
+                      </a>
+
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="margin-left:-70%">
+                           {% for l in langs %}
+                                 {% if l.0 != lang %}
+                                    <a class="dropdown-item" href="{% get_url_lang request l.0 %}">{{ l.0|upper }}</a>
+                                {% endif %}
+                            {% endfor %}
+                      </div>
+                    </div>
+                    <a href="{% url 'products:wishlist' %}"><img src="{% static './images/like.svg' %}" style="position:absolute;left:85%;top:35%" alt=""></a>
                     <button type="button" class="btn btn-secondary text-uppercase">Log In</button>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 {% extends 'layouts/base.html' %}
 {% load tags %}
+{% load i18n %}
 {% load static %}
 {% block content %}
 <style>
@@ -248,8 +249,8 @@ fieldset.question input {
 </style>
     <div class="parallax">
         <div class="texts" style="background:rgba(0, 0, 0, .7);height: 500px;">
-            <h1 class="text-center" style="color: #fff;position: absolute;top: 40%;left: 25%;">Модельный ряд <span style="color: #4599fe;">BMW</span> и <span style="color: #4599fe;">Mercedes-Benz</span> </h1>
-            <p class="text-center" style="font-size: 20px;color: #fff;position: absolute;left: 30%;top: 50%;"> Автомобили <span style="color: #4599fe;text-decoration: underline;">BMW</span> и <span style="color: #4599fe;text-decoration: underline;">Mercedes</span>  по доступным ценам уже в наличии </p>
+            <h1 class="text-center" style="color: #fff;margin:auto;"><br><br><br>{% trans 'Модельный ряд' %}<span style="color: #4599fe;">BMW</span> {% trans 'и' %} <span style="color: #4599fe;">Mercedes-Benz</span> </h1>
+            <p class="text-center" style="font-size: 20px;color: #fff;margin:auto"><br>{% trans 'Автомобили' %} <span style="color: #4599fe;text-decoration: underline;">BMW</span> {% trans 'и' %} <span style="color: #4599fe;text-decoration: underline;">Mercedes</span>{% trans 'по доступным ценам уже в наличии' %} </p>
 
         </div>
 

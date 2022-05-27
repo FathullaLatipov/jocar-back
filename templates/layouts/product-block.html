@@ -1,5 +1,6 @@
 {% load tags %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 <style>
 .nav-link{
@@ -251,34 +252,34 @@ fieldset.question input {
             <div class="card-body">
                 <h5 class="card-title">{{ product.model }}</h5>
                 <p class="card-text">
-                    Характеристики:
-                    <p> Объем – {{ product.obyom}}</p>
-                      <p>Мощность - {{ product.moshnost}}</p>
-                      <p>Коробка - {{ product.korobka}}</p>
-                      <p>Тип двигателя - {{ product.dvigatel}}</p>
-                      <p>Топливо - {{ product.toplivo}}</p>
-                      <p>Привод - {{ product.privod}}</p>
-                      <p>Разгон - {{ product.razgon}}</p>
-                      <p>Расход – {{ product.rasxod}}</p>
-                      <p>Макс.скорость, км/ч – {{ product.max_skorost}}</p>
+                    {% trans 'Характеристики' %}:
+                    <p> {% trans 'Объем' %} – {{ product.obyom}}</p>
+                      <p>{% trans 'Мощность' %} - {{ product.moshnost}}</p>
+                      <p>{% trans 'Коробка' %} - {{ product.korobka}}</p>
+                      <p>{% trans 'Тип двигателя' %} - {{ product.dvigatel}}</p>
+                      <p>{% trans 'Топливо' %} - {{ product.toplivo}}</p>
+                      <p>{% trans 'Привод' %} - {{ product.privod}}</p>
+                      <p>{% trans 'Разгон' %} - {{ product.razgon}}</p>
+                      <p>{% trans 'Расход' %} – {{ product.rasxod}}</p>
+                      <p>{% trans 'Макс.скорость' %}, км/ч – {{ product.max_skorost}}</p>
                 </p>
                           <a onclick="add_to_wishlist(this, {{ product.pk }})" class="card-link">
                             {% if product|in_wishlist:request %}
-                            <button class="btn-like2" type="submit"><img src="{% static './images/red_active.svg' %}"
+                            <button class="btn btn-like2" type="submit"><img src="{% static './images/red_active.svg' %}"
                                                                          alt=""></button>
                             {% else %}
-                            <button class="btn-like2" type="submit"><img src="{% static './images/like.svg' %}" alt="">
+                            <button class="btn btn-like2" type="submit"><img src="{% static './images/like.svg' %}" alt="">
                             </button>
                             {% endif %}
                         </a>
-                <button data-toggle="modal" data-target="#exampleModal" class="btn btn-12" style="margin: 30px 0 20px 20px; font-weight: bold; font-size: 15px; color: #fff; "><span>Оставить заявку</span><span>Оставить заявку</span></button>
+                <button data-toggle="modal" data-target="#exampleModal" class="btn btn-12" style="margin: 30px 0 20px 20px; font-weight: bold; font-size: 15px; color: #fff; "><span>{% trans 'Оставить заявку' %}</span><span>{% trans 'Оставить заявку' %}</span></button>
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Оставить заявку</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">{% trans 'Оставить заявку' %}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -287,31 +288,31 @@ fieldset.question input {
                             <div class="container">
                                 <form>
                                     <div class="form-group">
-                                        <label for="name">Имя</label>
+                                        <label for="name">{% trans 'Имя' %}</label>
                                         <input type="text" class="form-control" id="name" placeholder="Ваша имя" required>
                                       </div>
                                     <div class="form-group">
-                                      <label for="exampleInputEmail1">Email</label>
+                                      <label for="exampleInputEmail1">{% trans 'Email' %}</label>
                                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваш email" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="number">Номер</label>
+                                        <label for="number">{% trans 'Номер' %}</label>
                                         <input type="number" class="form-control" id="number" aria-describedby="emailHelp" placeholder="Введите ваш номер" required>
                                       </div>
                                     <div class="form-group">
                                         <fieldset class="question" id="title" data-validation="vrule_btn_required">
-                                            <input type="radio" name="title" value="Mr" id="Mr"><label for="Mr" class="single-line">BMW M3</label>
-                                            <input type="radio" name="title" value="Miss" id="Miss"><label for="Miss" class="single-line">BMW X6</label>
-                                            <input type="radio" name="title" value="Mrs" id="Mrs"><label for="Mrs" class="single-line">BMW X5M</label>
-                                            <input type="radio" name="title" value="Ms" id="Ms"><label for="Ms" class="single-line">Mercedes AMG E63s</label>
-                                            <input type="radio" name="title" value="Prof" id="Prof"><label for="Prof" class="single-line">Mercedes GTs</label>
-                                            <input type="radio" name="title" value="Dr" id="Dr"><label for="Dr" class="single-line">Mercedes G63</label>
+                                            <input type="radio" name="title" value="BMW M3" id="BMW M3"><label for="BMW M3" class="single-line">BMW M3</label>
+                                            <input type="radio" name="title" value="BMW X6" id="BMW X6"><label for="BMW X6" class="single-line">BMW X6</label>
+                                            <input type="radio" name="title" value="BMW X5M" id="BMW X5M"><label for="BMW X5M" class="single-line">BMW X5M</label>
+                                            <input type="radio" name="title" value="Mercedes AMG E63s" id="Mercedes AMG E63s"><label for="Mercedes AMG E63s" class="single-line">Mercedes AMG E63s</label>
+                                            <input type="radio" name="title" value="Mercedes GTs" id="Mercedes GTs"><label for="Mercedes GTs" class="single-line">Mercedes GTs</label>
+                                            <input type="radio" name="title" value="Mercedes G63" id="Mercedes G63"><label for="Mercedes G63" class="single-line">Mercedes G63</label>
                                             <span class="error-message"></span>
                                         </fieldset>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Назад</button>
-                                        <button type="submit" class="btn btn-primary" >Отправить</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Назад' %}</button>
+                                        <button type="submit" class="btn btn-primary" >{% trans 'Отправить' %}</button>
                                         </div>
                                   </form>
                             </div>
@@ -338,10 +339,10 @@ fieldset.question input {
             } else {
                 if (data.added) {
                     $('#message');
-                    element.innerHTML = '<button class="btn-like2" type="submit"><img src="{% static './images/red_active.svg' %}"alt=""></button>'
+                    element.innerHTML = '<button class="btn btn-like2" type="submit"><img src="{% static './images/red_active.svg' %}"alt=""></button>'
                 } else {
                     $('#message');
-                     element.innerHTML = '<button class="btn-like2" type="submit"><img src="{% static './images/like.svg' %}"alt=""></button>'
+                     element.innerHTML = '<button class="btn btn-like2" type="submit"><img src="{% static './images/like.svg' %}"alt=""></button>'
                 }
 
             }

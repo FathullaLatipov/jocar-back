@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-27 13:49+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: jocar/settings.py:101
+msgid "English"
+msgstr ""
+
+#: jocar/settings.py:102
+msgid "Russian"
+msgstr ""
+
+#: templates/index.html:188
+msgid "Аренда авто"
+msgstr "Rent a Car"
+
+#: templates/index.html:188
+msgid "для тех, кто ценит время и деньги"
+msgstr "for those who value time and money"
+
+#: templates/index.html:191
+msgid "Выбрать автомобиль"
+msgstr "Choose car"
+
+#: templates/index.html:191
+msgid "автомобиль в наличии"
+msgstr "car available"
+
+#: templates/index.html:192
+msgid "Компания"
+msgstr "Company"
+
+#: templates/index.html:192
+msgid "предлагает"
+msgstr "offers"
+
+#: templates/index.html:193 templates/index.html:327
+msgid "дня"
+msgstr "days"
+
+#: templates/index.html:193 templates/index.html:194 templates/index.html:195
+#: templates/index.html:327 templates/index.html:329 templates/index.html:331
+msgid "руб"
+msgstr "rub"
+
+#: templates/index.html:194 templates/index.html:195 templates/index.html:329
+#: templates/index.html:331
+msgid "дней"
+msgstr "days"
+
+#: templates/index.html:209
+msgid "Наши топовые модели автомобилей"
+msgstr "Our top car models"
+
+#: templates/index.html:220
+msgid "Подробнее!"
+msgstr "More!"
+
+#: templates/index.html:220
+msgid "Подробнее"
+msgstr "More"
+
+#: templates/index.html:226
+msgid "Посмотреть еще"
+msgstr "View more"
+
+#: templates/index.html:235
+msgid "Контакты и обратная связь"
+msgstr "Contacts and feedback"
+
+#: templates/index.html:240
+msgid "Гарантии"
+msgstr "Guarantees"
+
+#: templates/index.html:244
+msgid "Качество и профессианализм"
+msgstr "Quality and professionalism"
+
+#: templates/index.html:248
+msgid "Удобство и комфорт"
+msgstr "Convenience and comfort"
+
+#: templates/index.html:250
+msgid "Авторы"
+msgstr "The authors"
+
+#: templates/index.html:267
+msgid "Name"
+msgstr "Name"
+
+#: templates/index.html:274 templates/layouts/product-block.html:295
+msgid "Email"
+msgstr "Email"
+
+#: templates/index.html:280
+msgid "Number"
+msgstr "Number"
+
+#: templates/index.html:282
+msgid "Закажите звонок"
+msgstr "Request a call"
+
+#: templates/index.html:300 templates/layouts/product-block.html:255
+msgid "Характеристики"
+msgstr "Characteristics"
+
+#: templates/index.html:303 templates/layouts/product-block.html:256
+msgid "Объем"
+msgstr "Volume"
+
+#: templates/index.html:305 templates/layouts/product-block.html:257
+msgid "Мощность"
+msgstr "Power"
+
+#: templates/index.html:307 templates/layouts/product-block.html:258
+msgid "Коробка"
+msgstr "Transmission"
+
+#: templates/index.html:309 templates/layouts/product-block.html:259
+msgid "Тип двигателя"
+msgstr "Engine's type"
+
+#: templates/index.html:311 templates/layouts/product-block.html:260
+msgid "Топливо"
+msgstr "Fuel"
+
+#: templates/index.html:313 templates/layouts/product-block.html:261
+msgid "Привод"
+msgstr "Drive unit"
+
+#: templates/index.html:315 templates/layouts/product-block.html:262
+msgid "Разгон"
+msgstr "Overclocking"
+
+#: templates/index.html:317 templates/layouts/product-block.html:263
+msgid "Расход"
+msgstr "Consumption"
+
+#: templates/index.html:319
+msgid "Максимальная скорость"
+msgstr "Max speed"
+
+#: templates/index.html:325
+msgid "Цены за сутки"
+msgstr "Prices per day"
+
+#: templates/layouts/footer.html:7
+msgid "Работаем 7 дней в неделю"
+msgstr "We work 7 days a week"
+
+#: templates/layouts/header.html:15
+msgid "Home"
+msgstr ""
+
+#: templates/layouts/header.html:18
+msgid "Models"
+msgstr ""
+
+#: templates/layouts/header.html:21
+msgid "Contact"
+msgstr ""
+
+#: templates/layouts/product-block.html:264
+msgid "Макс.скорость"
+msgstr "Max speed"
+
+#: templates/layouts/product-block.html:275
+#: templates/layouts/product-block.html:282
+msgid "Оставить заявку"
+msgstr "Submit your application"
+
+#: templates/layouts/product-block.html:291
+msgid "Имя"
+msgstr "Name"
+
+#: templates/layouts/product-block.html:299
+msgid "Номер"
+msgstr "Number"
+
+#: templates/layouts/product-block.html:314
+msgid "Назад"
+msgstr "Back"
+
+#: templates/layouts/product-block.html:315
+msgid "Отправить"
+msgstr "Send"
+
+#: templates/models.html:252
+msgid "Модельный ряд"
+msgstr "The lineup"
+
+#: templates/models.html:252 templates/models.html:253
+msgid "и"
+msgstr "and"
+
+#: templates/models.html:253
+msgid "Автомобили"
+msgstr "Cars"
+
+#: templates/models.html:253
+msgid "по доступным ценам уже в наличии"
+msgstr "available at affordable prices"
