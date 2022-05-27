@@ -8,13 +8,13 @@ from cars.models import CarModel
 
 class HomeView(ListView):
     template_name = 'index.html'
-    queryset = CarModel.objects.order_by('-pk')
+    queryset = CarModel.objects.all()
     context_object_name = 'lists'
 
 
 class ModelsView(ListView):
     template_name = 'models.html'
-    queryset = CarModel.objects.order_by('-pk')
+    queryset = CarModel.objects.all()
     context_object_name = 'models'
 
 

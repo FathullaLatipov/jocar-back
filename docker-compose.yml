@@ -1,24 +1,22 @@
-version: "3.9"
+version: '3.7'
 
 services:
-  db:
-    image: postgres
+  sqlite3:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
     volumes:
-      - ./data/db:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=Jocar_db
-      - POSTGRES_USER=Jocar
-      - POSTGRES_PASSWORD=Jocar_pswd
+      - sql_data:/Users/user/Desktop/freelance_projects/Jocars/data/
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python /Users/user/Desktop/freelance_projects/Jocars/manage.py runserver 0.0.0.0.8000
     volumes:
-      - .:/code
+      - .:/Users/user/Desktop/freelance_projects/Jocars
     ports:
-      - "8000:8000"
-    environment:
-      - POSTGRES_NAME=Jocar_db
-      - POSTGRES_USER=Jocar
-      - POSTGRES_PASSWORD=Jocar_pswd
+      - 8008:8008
     depends_on:
-      - db
+      - sqlite3
+
+volumes:
+  sql_data:
+

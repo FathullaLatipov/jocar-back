@@ -326,7 +326,7 @@ fieldset.question input {
         </div>
 <br>
 <script>
-    console.log('asd')
+<!-- добавления в избранное   -->
     function add_to_wishlist(element, pk) {
         $.getJSON('/models/'+ "wishlist/"  + pk, function (data) {
             if (!data.status) {

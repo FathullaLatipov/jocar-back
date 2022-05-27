@@ -4,8 +4,8 @@ from django.db import models
 class CarModel(models.Model):
     model = models.CharField(max_length=99, null=True)
     image = models.FileField(upload_to='cars_image', null=True)
-    obyom = models.CharField(max_length=99, null=True)
-    moshnost = models.CharField(max_length=99, null=True)
+    obyom2 = models.CharField(max_length=99, null=True)
+    moshnost2 = models.CharField(max_length=99, null=True)
     korobka = models.CharField(max_length=99, null=True)
     dvigatel = models.CharField(max_length=99, null=True)
     toplivo = models.CharField(max_length=99, null=True)

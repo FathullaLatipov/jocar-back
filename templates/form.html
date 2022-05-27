@@ -1,0 +1,227 @@
+
+{% load static %}
+{% load tags %}
+{% block content %}
+<style>
+/* Style all input fields */
+body{
+  background: url(/static/images/losz.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Style the container for inputs */
+.container {
+    padding: 20px;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 0px;
+    border-radius: 10px;
+    transition: transform 10s;
+}
+
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+
+#message2 {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 0px;
+    border-radius: 10px;
+    transition: transform 10s;
+}
+
+#message2 p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+
+
+.valid2 {
+    color: green;
+}
+
+.valid2:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+
+.invalid2 {
+    color: red;
+}
+
+.invalid2:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+</style>
+</head>
+<body>
+
+
+<div class="container">
+  <div class="form" style="background-color: rgba(0, 0, 0, .7);width: 50%;margin: auto;margin-top: 12%;">
+    <h3 style="text-align: center;color:#fff;font-size:20px;font-weight:bold;font-family:Arial, Helvetica, sans-serif;padding: 20px 0px; ">Добро пожаловать на наш сайт <br> Jocars</h3>
+    <form action="home/" style="margin:auto;padding: 20px;">
+      <label for="usrname" style="color: #fff;font-size:16px;font-weight:500;font-family:Arial, Helvetica, sans-serif">Username</label>
+      <input type="text" id="usrname" name="usrname" required>
+
+      <label for="psw" style="color: #fff;font-size:16px;font-weight:500;font-family:Arial, Helvetica, sans-serif">Password</label>
+      <input type="password" id="psw" name="psw"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+      <div id="message">
+        <h3>Пароль должен содержать</h3>
+
+        <p id="capital" class="invalid">Минимум <b>1 заглавная буква</b></p>
+        <hr>
+        <p id="number" class="invalid">Минимум <b>1 цифра</b></p>
+        <hr>
+        <p id="length" class="invalid">Минимум <b>8 символов</b></p>
+
+        <!-- <p id="letters" class="invalid"> <b></b></p> -->
+      </div>
+      <label for="email" style="color: #fff;font-size:16px;font-weight:500;font-family:Arial, Helvetica, sans-serif">Email</label>
+      <input type="text" id="email" name="email" title="email" required>
+      <div id="message2">
+        <p id="email2" class="invalid2">Используйте правильный формат почты <b>("@gmail.com")</b> </p>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</div>
+
+
+
+<script>
+var myInput = document.getElementById("psw");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+var letter = document.getElementById("letter");
+var myEmail = document.getElementById("email");
+var email2 = document.getElementById("email2")
+// var email = /^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/;
+
+// When the user clicks on the password field, show the message box
+myEmail.onfocus = function() {
+    document.getElementById("message2").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myEmail.onblur = function() {
+    document.getElementById("message2").style.display = "none";
+}
+
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+    document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+    document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myEmail.onkeyup = function() {
+  var emails = /@gmail.com/g;
+  if(myEmail.value.match(emails)) {
+    email2.classList.remove("invalid2");
+    email2.classList.add("valid2");
+  } else {
+    email2.classList.remove("valid2");
+    email2.classList.add("invalid2");
+  }
+}
+
+myInput.onkeyup = function() {
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  console.log("error")
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+
+}
+</script>
+{% endblock %}
