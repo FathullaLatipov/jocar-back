@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-27 13:49+0500\n"
+"POT-Creation-Date: 2022-05-27 14:23+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -205,16 +205,20 @@ msgstr ""
 
 #: templates/models.html:252
 msgid "Модельный ряд"
-msgstr ""
+msgstr "Модельный ряд"
 
 #: templates/models.html:252 templates/models.html:253
 msgid "и"
-msgstr ""
+msgstr "и"
 
 #: templates/models.html:253
 msgid "Автомобили"
-msgstr ""
+msgstr "Автомобили"
 
 #: templates/models.html:253
 msgid "по доступным ценам уже в наличии"
-msgstr ""
+msgstr "по доступным ценам уже в наличии"
+
+#: templates/wishlist.html:250
+msgid "Wishlist"
+msgstr "Избранное"

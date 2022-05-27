@@ -1,5 +1,6 @@
 {% extends 'layouts/base.html' %}
 {% load tags %}
+{% load i18n %}
 {% load static %}
 {% block content %}
 <style>
@@ -246,8 +247,7 @@ fieldset.question input {
 }
 
 </style>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum modi nulla quam tempore tenetur! A, dignissimos doloremque dolores doloribus earum esse inventore omnis rem vel! Ab ad aliquam atque, consequatur eos excepturi illum iure minus neque porro possimus repellat. A adipisci consequatur cumque dignissimos distinctio earum harum in iure laudantium magnam natus nobis nostrum, odio, omnis, porro praesentium quas quos repudiandae rerum similique? Ipsum labore magnam maxime, porro praesentium quam veritatis? Doloremque exercitationem incidunt laborum rerum tenetur. Beatae consectetur eos et id, ipsa laudantium qui soluta! Alias aliquid cum delectus ducimus, est, excepturi incidunt itaque mollitia odio, officia praesentium quas quisquam repudiandae temporibus voluptate voluptatibus voluptatum. Ducimus eaque error, et illo illum nesciunt officia provident qui vel voluptatum! Libero pariatur quas soluta veniam. Autem beatae consectetur debitis dicta eligendi et, eum facere facilis labore, modi necessitatibus nemo nihil nostrum officia perferendis quae quidem ratione repellat sint suscipit tempora ullam ut voluptate? Explicabo obcaecati officia quis saepe? Accusamus consectetur debitis, deleniti est eum ipsam numquam suscipit. Architecto blanditiis corporis cum cupiditate, delectus, dicta doloribus eaque eius eos error est explicabo facilis fugiat in ipsum itaque laudantium maiores minima modi molestias nesciunt pariatur perferendis praesentium quaerat quam quas quo repellat vel, veniam?</p>
-
+<h1 class="text-center">{% trans 'Wishlist' %}</h1>
 <div class="container">
     <div class="row" style="margin-top: 50px;">
         {% for product in object_list %}
