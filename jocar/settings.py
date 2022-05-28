@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
 
     'cars',
-    'home',
+    'form',
 ]
 
 MIDDLEWARE = [

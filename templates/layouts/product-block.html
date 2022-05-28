@@ -286,33 +286,32 @@ fieldset.question input {
                         </div>
                         <div class="modal-body">
                             <div class="container">
-                                <form>
+                                <form id="formID">
                                     <div class="form-group">
-                                        <label for="name">{% trans 'Имя' %}</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Ваша имя" required>
+                                        <label for="fname">{% trans 'Имя' %}</label>
+                                        <input type="text" class="fname form-control" id="fname" name="fname" placeholder="Ваша имя" required>
                                       </div>
                                     <div class="form-group">
-                                      <label for="exampleInputEmail1">{% trans 'Email' %}</label>
-                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваш email" required>
+                                      <label for="lname">Email</label>
+                                      <input type="email" class="lname form-control" id="lname" name="lname" aria-describedby="emailHelp" placeholder="Введите ваш email" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="number">{% trans 'Номер' %}</label>
-                                        <input type="number" class="form-control" id="number" aria-describedby="emailHelp" placeholder="Введите ваш номер" required>
+                                        <input type="number" class="number form-control" id="number" aria-describedby="emailHelp" placeholder="Введите ваш номер" required>
                                       </div>
-                                    <div class="form-group">
-                                        <fieldset class="question" id="title" data-validation="vrule_btn_required">
-                                            <input type="radio" name="title" value="BMW M3" id="BMW M3"><label for="BMW M3" class="single-line">BMW M3</label>
-                                            <input type="radio" name="title" value="BMW X6" id="BMW X6"><label for="BMW X6" class="single-line">BMW X6</label>
-                                            <input type="radio" name="title" value="BMW X5M" id="BMW X5M"><label for="BMW X5M" class="single-line">BMW X5M</label>
-                                            <input type="radio" name="title" value="Mercedes AMG E63s" id="Mercedes AMG E63s"><label for="Mercedes AMG E63s" class="single-line">Mercedes AMG E63s</label>
-                                            <input type="radio" name="title" value="Mercedes GTs" id="Mercedes GTs"><label for="Mercedes GTs" class="single-line">Mercedes GTs</label>
-                                            <input type="radio" name="title" value="Mercedes G63" id="Mercedes G63"><label for="Mercedes G63" class="single-line">Mercedes G63</label>
-                                            <span class="error-message"></span>
-                                        </fieldset>
-                                    </div>
+                              <div class="form-group">
+                                    <fieldset class="question" id="title" data-validation="vrule_btn_required">
+                                        <input type="radio" class="radio_button" name="fav_language" value="BMW M3" id="HTML"><label for="HTML" class="single-line">BMW M3</label>
+                                        <input type="radio" class="radio_button" name="fav_language" value="BMW X6" id="CSS"><label for="CSS" class="single-line">BMW X6</label>
+                                        <input type="radio" class="radio_button" name="fav_language" value="BMW X5M" id="JavaScript"><label for="JavaScript" class="single-line">BMW X5M</label>
+                                        <input type="radio" class="radio_button" name="fav_language" value="Mercedes AMG E63s" id="Mercedes AMG E63s"><label for="Mercedes AMG E63s" class="single-line">Mercedes AMG E63s</label>
+                                        <input type="radio" class="radio_button" name="fav_language" value="Mercedes GTs" id="Mercedes GTs"><label for="Mercedes GTs" class="single-line">Mercedes GTs</label>
+                                        <input type="radio" class="radio_button" name="fav_language" value="Mercedes G63" id="Mercedes G63"><label for="Mercedes G63" class="single-line">Mercedes G63</label>
+                                        <span class="error-message"></span>
+                                    </fieldset>
+                                </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Назад' %}</button>
-                                        <button type="submit" class="btn btn-primary" >{% trans 'Отправить' %}</button>
+                                        <input type="submit" class="btn btn-primary" value="Submit">
                                         </div>
                                   </form>
                             </div>

@@ -257,11 +257,11 @@ fieldset.question input {
     </div>
     <div class="container">
     <div class="row" style="margin-top: 50px;">
-        {% for product in models %}
-         <div class="col-md-4">
-            {% include 'layouts/product-block.html' %}
-        </div>
-        {% endfor %}
+            <div class="col-md-4">
+                {% for product in models %}
+                    {% include 'layouts/product-block.html' %}
+                {% endfor %}
+            </div>
         <br>
     </div>
 </div>

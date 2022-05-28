@@ -1,9 +1,9 @@
 from django.urls import path
-from cars.views import HomeView
-from home.views import FormaView
 
-app_name = 'homes'
+from cars.views import HomeView
+
+app_name = 'home'
 
 urlpatterns = [
-    path('', FormaView.as_view(), name="form"),
+    path('home/', HomeView.as_view(), name='index'),
 ]

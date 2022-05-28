@@ -117,7 +117,7 @@ input[type=submit] {
 <div class="container">
   <div class="form" style="background-color: rgba(0, 0, 0, .7);width: 50%;margin: auto;margin-top: 12%;">
     <h3 style="text-align: center;color:#fff;font-size:20px;font-weight:bold;font-family:Arial, Helvetica, sans-serif;padding: 20px 0px; ">Добро пожаловать на наш сайт <br> Jocars</h3>
-    <form action="home/" style="margin:auto;padding: 20px;">
+    <form action="{% url 'home:index' %}" style="margin:auto;padding: 20px;">
       <label for="usrname" style="color: #fff;font-size:16px;font-weight:500;font-family:Arial, Helvetica, sans-serif">Username</label>
       <input type="text" id="usrname" name="usrname" required>
 

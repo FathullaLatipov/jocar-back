@@ -14,8 +14,8 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('models/', include('cars.urls', namespace='products')),
-    path('home/', HomeView.as_view(), name='home'),
-    path('', include('home.urls', namespace='homes')),
+    path('home/', include('home.urls', namespace='index')),
+    path('', include('form.urls', namespace='homes')),
 
 
 )

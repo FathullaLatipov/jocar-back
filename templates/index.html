@@ -204,24 +204,17 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
     <!-- модели авто -->
     <main class="cours" id="models">
         <div class="container">
-            <div class="row">
-                <h2 class="title font-weight-bold " >
+             <h2 class="title font-weight-bold " style="text-align: center;margin: 20px" >
                    {% trans 'Наши топовые модели автомобилей' %}
                 </h2>
+            <div class="row">
+
                 <!-- первая модель авто-->
-                {% for product in lists %}
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="{{ product.image.url}}" style="width: 400px; height: 200px; margin-left: 70px;" alt="">
-                        </div>
-                        <div class="card-body">
-                            <h4 style="font-size: 16px; margin-top: 15px;">Превосходство на любых покрытиях: внедорожники BMW X6 M благодаря выдающимся динамическим характеристикам, выразительному дизайну М и несравненной маневренности демонстрируют свое доминирующее положение. Откройте для себя модели BMW X6, которые поражают уникальными эксплуатационными характеристиками, комфортом и экономичностью. Авто удивляет благодаря роскошному салону и динамике, обеспеченной автоспортивными генами..</h4>
-                                <button class="btn btn-12" style="margin: 30px 0 20px 20px; font-weight: bold; font-size: 15px; color: #fff; " data-toggle="modal" data-target="#exampleModalCenter"><span>{% trans 'Подробнее!' %}</span><span>{% trans 'Подробнее' %}</span></button>
-                        </div>
-                    </div>
-                    </div>
-                {% endfor %}
+                <div class="col-md-4">
+                    {% for product in object_list %}
+                        {% include 'layouts/product-block.html' %}
+                    {% endfor %}
+                </div>
             </div>
            <a href="/models" style="text-decoration: none;"><button class="btn btn-outline-primary mt-3 text-center" style="margin: auto;display:block">{% trans 'Посмотреть еще' %}</button></a>
         </div>
@@ -259,27 +252,26 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
               </div>
             </div>
             <div class="col-md-5">
-              <form>
-                <div class="group">      
-                  <input type="text" required>
+              <form id="formID">
+                <div class="group">
+                  <span class="highlight"></span>
+                  <span class="fname bar"></span>
+                  <label for="fname">{% trans 'Name' %}</label>
+                  <input type="text" id="fname" name="fname" class="fname form-control" required>
+                </div>
+                <div class="group">
                   <span class="highlight"></span>
                   <span class="bar"></span>
-                  <label>{% trans 'Name' %}</label>
+                  <label for="lname">{% trans 'Email' %}</label>
+                  <input class="lname form-control" id="lname" name="lname" type="email" required>
                 </div>
-                  
-                <div class="group">      
-                  <input type="text" required>
+                <div class="group">
                   <span class="highlight"></span>
                   <span class="bar"></span>
-                  <label>{% trans 'Email' %}</label>
+                  <label for="number">{% trans 'Number' %}</label>
+                   <input class="number form-control" type="number" id="number" name="number" required>
                 </div>
-                <div class="group">      
-                  <input type="text" required>
-                  <span class="highlight"></span>
-                  <span class="bar"></span>
-                  <label>{% trans 'Number' %}</label>
-                </div>
-                        <button type="button" style="width: 320px;" class="btn btn-outline-info">{% trans 'Закажите звонок' %}</button>
+                  <input type="submit" class="btn btn-primary" value="Submit">
               </form>
             </div>
           </div>
@@ -287,100 +279,6 @@ background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
           </div>
     </main>
     <!-- модальное окно -->
-    <div class="modal  fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog2" role="document">
-          <div class="modal-content">
-            <div class="modal-header d-block">
-              <h5 class="text-center" style="font-size: 30px;" >BMW X6 M</h5>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-
-                        <div class="col-6">
-                        <p><span class="font-weight-bold" style="font-size: 20px;">{% trans 'Характеристики' %}:</span>
-                    {% for product in lists %}
-                            <br>
-                            {% trans 'Объем' %} – {{ product.obyom}}
-                            <br>
-                            {% trans 'Мощность' %} - {{ product.obyom}}
-                            <br>
-                            {% trans 'Коробка' %} - {{ product.obyom}}
-                            <br>
-                            {% trans 'Тип двигателя' %} - {{ product.obyom}}
-                            <br>
-                            {% trans 'Топливо' %} - {{ product.obyom}}
-                            <br>
-                            {% trans 'Привод' %} - {{ product.obyom}}
-                            <br>
-                            {% trans 'Разгон' %} – {{ product.obyom}}
-                            <br>
-                            {% trans 'Расход' %} – {{ product.obyom}}
-                            <br>
-                            {% trans 'Максимальная скорость' %}, км/ч – {{ product.obyom}}
-                            </p>
-                   {% endfor %}
-                    </div>
-
-                    <div class="col-6">
-                        <p><span class="font-weight-bold" style="font-size: 20px;">{% trans 'Цены за сутки' %}:</span>
-                            <br>
-                            1-3 {% trans 'дня' %} 25000 {% trans 'руб' %}
-                            <br>
-                            4-7 {% trans 'дней' %} 23000 {% trans 'руб' %}
-                            <br>
-                            8-14 {% trans 'дней' %} 21000 {% trans 'руб' %}
-                            </p>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <div class="modal  fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog2" role="document">
-          <div class="modal-content">
-            <div class="modal-header d-block">
-              <h5 class="text-center" style="font-size: 30px;" >Mercedes-Benz GTs AMG</h5>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-6">
-                        <p><span class="font-weight-bold" style="font-size: 20px;">Характеристики:</span>
-                            <br>
-                            Объем – aaaa
-                            <br>
-                            Мощность - 522 л.с.
-                            <br>
-                            Коробка - автомат
-                            <br>
-                            Тип двигателя - бензин
-                            <br>
-                            Топливо - АИ-98
-                            <br>
-                            Привод - задний
-                            <br>
-                            Разгон – 3.3 с
-                            <br>
-                            Расход – 9.6 л
-                            <br>
-                            Максимальная скорость, км/ч – 310
-                            </p>
-                    </div>
-                    <div class="col-6">
-                        <p><span class="font-weight-bold" style="font-size: 20px;">Цены за сутки:</span>
-                            <br>
-                            1-3 дня 55000 руб
-                            <br>
-                            4-7 дней 50000 руб
-                            <br>
-                            8-14 дней 47000 руб
-                            </p>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
 
 {% endblock %}
+<script src="{% static 'js/index-form.js' %}"></script>
