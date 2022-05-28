@@ -99,13 +99,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en'
 
-LANGUAGES = (
-    ('en', _('English')),
-    ('ru', _('Russian')),
-)
-
-LOCALE_PATHS = BASE_DIR / 'locale',
-
 TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
