@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     'cars',
     'form',
+    'home',
 ]
 
 MIDDLEWARE = [
