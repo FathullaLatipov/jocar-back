@@ -1,22 +1,20 @@
-version: '3.7'
-
+version: "3.9"
 services:
-  sqlite3:
-    image: nouchka/sqlite3:latest
-    stdin_open: true
-    tty: true
-    volumes:
-      - sql_data:/Users/user/Desktop/freelance_projects/Jocars/data/
   web:
     build: .
-    command: python /Users/user/Desktop/freelance_projects/Jocars/manage.py runserver 0.0.0.0.8000
+    command: python /code/manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/Users/user/Desktop/freelance_projects/Jocars
+      - .:/code
     ports:
-      - 8008:8008
+      - 8000:8000
     depends_on:
-      - sqlite3
+      - db
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
 
 volumes:
-  sql_data:
-
+  postgres_data:

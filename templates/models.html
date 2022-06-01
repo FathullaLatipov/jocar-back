@@ -256,14 +256,76 @@ fieldset.question input {
 
     </div>
     <div class="container">
-    <div class="row" style="margin-top: 50px;">
-            <div class="col-md-4">
-                {% for product in models %}
-                    {% include 'layouts/product-block.html' %}
-                {% endfor %}
-            </div>
-        <br>
+        <div class="row" style="margin-top: 50px;">
+                    {% for product in models %}
+                        <div class="col-md-4">
+                        {% include 'layouts/product-block.html' %}
+                       </div>
+                    {% endfor %}
+        </div>
+    </div>
+
+<div class="container">
+    <div class="row">
+        {% for product in models %}
+        <div class="col-md-4">
+           <div class="card" style="width: 18rem; margin: 10px">
+          <img src="{{ product.image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.model}}</h5>
+            <p class="card-text">
+                    {% trans 'Характеристики' %}:
+                    <p> {% trans 'Объем' %} – {{ product.obyom}}</p>
+                      <p>{% trans 'Мощность' %} - {{ product.moshnost}}</p>
+                      <p>{% trans 'Коробка' %} - {{ product.korobka}}</p>
+                      <p>{% trans 'Тип двигателя' %} - {{ product.dvigatel}}</p>
+                      <p>{% trans 'Топливо' %} - {{ product.toplivo}}</p>
+                      <p>{% trans 'Привод' %} - {{ product.privod}}</p>
+                      <p>{% trans 'Разгон' %} - {{ product.razgon}}</p>
+                      <p>{% trans 'Расход' %} – {{ product.rasxod}}</p>
+                      <p>{% trans 'Макс.скорость' %}, км/ч – {{ product.max_skorost}}</p>
+                </p>
+                           <a onclick="add_to_wishlist(this, {{ product.pk }})" class="card-link">
+                            {% if product|in_wishlist:request %}
+                            <button class="btn btn-like2" type="submit"><img src="{% static './images/red_active.svg' %}"
+                                                                         alt=""></button>
+                            {% else %}
+                            <button class="btn btn-like2" type="submit"><img src="{% static './images/like.svg' %}" alt="">
+                            </button>
+                            {% endif %}
+                        </a>
+              <button data-toggle="modal" data-target="#exampleModal" class="btn btn-12" style="margin: 30px 0 20px 20px; font-weight: bold; font-size: 15px; color: #fff; "><span>{% trans 'Оставить заявку' %}</span><span>{% trans 'Оставить заявку' %}</span></button>
+
+          </div>
+        </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 <br>
+<script>
+<!-- добавления в избранное   -->
+    function add_to_wishlist(element, pk) {
+        $.getJSON('/models/'+ "wishlist/"  + pk, function (data) {
+            if (!data.status) {
+               $('#message').append(`<div style="padding:5px">
+                        <div id="inner-message" class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            Error
+                        </div>
+                    </div>`);
+            } else {
+                if (data.added) {
+                    $('#message');
+                    element.innerHTML = '<button class="btn btn-like2" type="submit"><img src="{% static './images/red_active.svg' %}"alt=""></button>'
+                } else {
+                    $('#message');
+                     element.innerHTML = '<button class="btn btn-like2" type="submit"><img src="{% static './images/like.svg' %}"alt=""></button>'
+                }
+
+            }
+        });
+    }
+
+</script>
 {% endblock %}
