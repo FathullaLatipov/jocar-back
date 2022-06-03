@@ -8,15 +8,15 @@
                 <h5 class="card-title">{{ product.model }}</h5>
                 <p class="card-text">
                     {% trans 'Характеристики' %}:
-                    <p> {% trans 'Объем' %} – {{ product.obyom}}</p>
-                      <p>{% trans 'Мощность' %} - {{ product.moshnost}}</p>
-                      <p>{% trans 'Коробка' %} - {{ product.korobka}}</p>
-                      <p>{% trans 'Тип двигателя' %} - {{ product.dvigatel}}</p>
-                      <p>{% trans 'Топливо' %} - {{ product.toplivo}}</p>
-                      <p>{% trans 'Привод' %} - {{ product.privod}}</p>
-                      <p>{% trans 'Разгон' %} - {{ product.razgon}}</p>
-                      <p>{% trans 'Расход' %} – {{ product.rasxod}}</p>
-                      <p>{% trans 'Макс.скорость' %}, км/ч – {{ product.max_skorost}}</p>
+                    <p> {% trans 'Объем' %} – {{ product.volume}}</p>
+                      <p>{% trans 'Мощность' %} - {{ product.power}}</p>
+                      <p>{% trans 'Коробка' %} - {{ product.transmission}}</p>
+                      <p>{% trans 'Тип двигателя' %} - {{ product.engine}}</p>
+                      <p>{% trans 'Топливо' %} - {{ product.fuel}}</p>
+                      <p>{% trans 'Привод' %} - {{ product.drive_unit}}</p>
+                      <p>{% trans 'Разгон' %} - {{ product.overclocking}}</p>
+                      <p>{% trans 'Расход' %} – {{ product.consumption}}</p>
+                      <p>{% trans 'Макс.скорость' %}, км/ч – {{ product.max_speed}}</p>
                 </p>
                           <a onclick="add_to_wishlist(this, {{ product.pk }})" class="card-link">
                             {% if product|in_wishlist:request %}
