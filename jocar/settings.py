@@ -1,5 +1,6 @@
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_&7kd@h$21b#@dznp8ymp6e!wut%e=vc(pra%9m@lry*m4psln'
@@ -24,6 +25,7 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'widget_tweaks',
+    'whitenoise.runserver_nostatic',
 
     'cars',
     'form',
@@ -64,7 +66,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'jocar.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -104,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -124,11 +124,9 @@ STATICFILES_DIRS = BASE_DIR / 'assets',
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
